@@ -1,0 +1,1 @@
+WELCOME_MESSAGE = "Welcome to summerizer_ai. This application uses a convolutional neural network model to summerize plain text. With this api, you have the option to input text you want to summerize, add the minimum and maximum length of the summary. The data must be a valid json object.\n\nHave fun :)"
