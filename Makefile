@@ -1,5 +1,5 @@
 install:
-	pip install --upgrade pip &&\
+	pip install --no-cache-dir --upgrade pip &&\
 		pip install -r requirements.txt
 
 test:
@@ -11,7 +11,7 @@ format:
 lint:
 	pylint --disable=R,C app/main.py
 
-dev-server:
+run-server:
 	uvicorn app.main:app --reload
 
 update-requirements:
