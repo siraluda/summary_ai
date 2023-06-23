@@ -16,33 +16,41 @@ jobs:
     runs_on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-      - uses: action/checkout@v3
+      -
+        name: Checkout repository
+        uses: action/checkout@v3
 
-      - name: Setup Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.11.4
+      -
+        name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.4
 
-      - name: Install dependencies
-      run: |
-        make install
+      -
+        name: Install dependencies
+        run: |
+          make install
 
-      - name: Lint code
-      run: |
-        make lint
+      -
+        name: Lint code
+        run: |
+          make lint
 
-      - name: Test application
-      run: |
-        make test
+      -
+        name: Test application
+        run: |
+          make test
 
-      - name: Format code
-      run: |
-        make format
+      -
+        name: Format code
+        run: |
+          make format
 
   containerize:
     name: Create a docker image of the application and push to Siraluda repo
     runs-on: ubuntu-latest
+    needs: build
+
     steps:
       -
         name: Set up QEMU
